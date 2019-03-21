@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.template.dal.dao.user.UserMapper">
+    <resultMap id="BaseResultMap" type="com.template.dal.model.User">
+        <result column="name" property="name" />
+        <result column="age" property="age" />
+        <result column="sex" property="sex" />
+        <result column="address" property="address" />
+        <result column="login_id" property="logiId" />
+        <result column="password" property="password" />
+    </resultMap>
+
+    <select id="queryList" resultMap="com.template.dal.model.User">
+        SELECT * FROM users
+        <where>
+            del_flg = 1
+        </where>
+    </select>
+</mapper>
