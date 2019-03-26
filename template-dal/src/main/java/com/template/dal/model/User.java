@@ -5,6 +5,10 @@ import com.template.dal.base.BaseModel;
 
 import java.io.Serializable;
 
+/**
+ * @author zhuangwj
+ * @since 2019/3/5
+ */
 public class User extends BaseModel {
 
     private String name;

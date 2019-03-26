@@ -24,3 +24,4 @@ hs_err_pid*
 
 TEMPLATE_API_HOME/*
 *.iml
+.idea/*
