@@ -100,5 +100,27 @@ public class StringUtils {
         return sb.toString();
     }
 
+    public static String camelToCase(String param) {
+        if (param == null || "".equals(param.trim())) {
+            return "";
+        }
+        int len = param.length();
+        StringBuilder sb = new StringBuilder(len);
+        for (int i = 0; i < len; i++) {
+            char c = param.charAt(i);
+            if ('_' == (c)) {
+                sb.append(Character.toUpperCase(param.charAt(i+1)));
+                i++;
+            } else {
+                sb.append(c);
+            }
+        }
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(camelToCase("a_bc"));
+    }
+
 }
 

@@ -231,10 +231,13 @@ public class BaseServiceImpl<M extends BaseMapper<T>, T extends BaseModel> imple
     }
 
     @Override
+    @Transactional(rollbackFor = Throwable.class, timeout = 60)
     public Page<T> queryPage(Map<String, Object> param) {
         Page<T> page = getPage(param);
         List<T> records = baseMapper.selectRecords(page, param);
+//        List<T> rows = baseMapper.selectRecords(param);
         page.setRecords(records);
+//        page.setTotal(rows.size());
         return page;
     }
 
@@ -251,9 +254,9 @@ public class BaseServiceImpl<M extends BaseMapper<T>, T extends BaseModel> imple
         Boolean asc = DataUtil.isNotEmpty(model.getAsc()) ? model.getAsc() : false;
         Page page = getPage(pageNo, pageSize, orderBy, asc);
         List<T> records = baseMapper.selectRecords(page, param);
-        List<T> rows = baseMapper.selectRecords(param);
+//        List<T> rows = baseMapper.selectRecords(param);
         page.setRecords(records);
-        page.setTotal(rows.size());
+//        page.setTotal(rows.size());
         return page;
     }
 
