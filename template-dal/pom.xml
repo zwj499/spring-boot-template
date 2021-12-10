@@ -25,7 +25,7 @@
         <jackson.version>2.9.1</jackson.version>
         <hibernate-validator.version>5.4.2.Final</hibernate-validator.version>
         <druid.version>1.0.20</druid.version>
-        <log4j-api.version>2.7</log4j-api.version>
+        <log4j-api.version>2.15.0</log4j-api.version>
         <log4j-core.version>2.7</log4j-core.version>
         <commons-collections.version>4.1</commons-collections.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
